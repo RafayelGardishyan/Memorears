@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Themes</title>
+</head>
+<body>
+<h1>Themes</h1>
+<h4><a href="/settings">Back to settings home</a></h4>
+<a href="/settings/themes/add">Add a new theme</a>
+<ul>
+    {% for theme in themes %}
+    <li>{{ theme.name }}: {{ theme.description|truncatechars:20 }}   <a href="/settings/themes/delete/{{ theme.id }}">Delete this theme</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

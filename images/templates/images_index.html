@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Images</title>
+</head>
+<body>
+<h1>Images</h1>
+<h4><a href="/settings">Back to settings home</a></h4>
+<a href="/settings/images/add">Add a new image</a>
+<ul>
+    {% for image in images %}
+    <li>{{ image.image.name }}: <a href="{{ image.image.url }}">View image</a> <a href="/settings/images/delete/{{ image.id }}">Delete this image</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
