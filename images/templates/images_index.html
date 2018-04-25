@@ -6,12 +6,19 @@
 </head>
 <body>
 <h1>Images</h1>
-<h4><a href="/settings">Back to settings home</a></h4>
+<h3><a href="/settings">Back to settings home</a></h3>
+<hr>
 <a href="/settings/images/add">Add a new image</a>
-<ul>
+<hr>
+<table border="1">
     {% for image in images %}
-    <li>{{ image.image.name }}: <a href="{{ image.image.url }}">View image</a> <a href="/settings/images/delete/{{ image.id }}">Delete this image</a></li>
+        <tr>
+            <th>{{ image.image.name }}</th>
+            <th>{{ image.theme.name }}</th>
+            <th><a href="{{ image.image.url }}">View image</a></th>
+            <th><a href="/settings/images/delete/{{ image.id }}">Delete this image</a></th>
+        </tr>
     {% endfor %}
-</ul>
+</table>
 </body>
 </html>
