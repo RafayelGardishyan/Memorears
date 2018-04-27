@@ -10,5 +10,5 @@ urlpatterns = [
     path('player/2/view', views.index),
     path('player/1/get', views.index),
     path('player/2/get', views.index),
-    path('settings/set', views.index)
+    path('settings/set', views.settings)
 ]
