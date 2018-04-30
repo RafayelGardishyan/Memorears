@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Memoreyes</title>
+<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
 <style>
+  *{
+  font-family: 'Black Han Sans', sans-serif;
+  }
+  body{
+    /*background: url("/media/images/gardient-bg.jpg") no-repeat center center fixed;*/
+    background-color: rebeccapurple;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 div#memory_board{
-	background:#CCC;
-	border:#999 1px solid;
+	background: rgba(255, 255, 255, 0.0);
 	width:850px;
 	height:540px;
 	padding:24px;
@@ -13,14 +26,30 @@ div#memory_board{
 div#memory_board > div{
 	background: url('{{ cover }}') no-repeat;
 	background-size: 116px 116px;
-	border:#000 1px solid;
-	width:116px;
-	height:116px;
+	border:rebeccapurple 3px solid;
+	border-radius: 15px;
+	width:113px;
+	height:113px;
 	float:left;
 	margin:10px;
 	font-size:64px;
 	cursor:pointer;
 	text-align:center;
+}
+
+.image{
+border-radius: 15px;
+transition: 2s;
+}
+
+.grad1 {
+    background: red;
+    background: -webkit-linear-gradient(left, orange , #ff8c32, blue, violet);
+    background: -o-linear-gradient(right, orange, #ffae20, blue, violet);
+    background: -moz-linear-gradient(right, orange, #ffbf2b, blue, violet);
+    background: linear-gradient(to right, orange , #ffb021, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* The Modal (background) */
@@ -53,6 +82,22 @@ div#memory_board > div{
     animation-duration: 0.4s
 }
 
+a:link, a:visited {
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 15px;
+    padding: 25px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 15px;
+}
+
+
+a:hover, a:active {
+    background-color: #522d7f;
+}
+
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0}
@@ -81,7 +126,7 @@ div#memory_board > div{
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: rebeccapurple;
     color: white;
 }
 
@@ -89,8 +134,21 @@ div#memory_board > div{
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: rebeccapurple;
     color: white;
+}
+  .content{
+  text-align: center;
+  background-color: rgba(255,255,255, 0.75);
+  border-radius: 10px;
+  padding: 11px;
+  margin: 20px;
+  }
+h1{
+color: rebeccapurple;
+}
+footer{
+color: rebeccapurple;
 }
 </style>
 <script>
@@ -131,7 +189,7 @@ function newBoard(){
 function memoryFlipTile(tile,val){
 	if(tile.innerHTML == "" && memory_values.length < 2){
 		tile.style.backgroundSize = '0px 0px;';
-		tile.innerHTML = '<img src="' + val + '" height="116" width="116">';
+		tile.innerHTML = '<img class="image" src="' + val + '" height="113" width="113">';
 		if(memory_values.length == 0){
 			memory_values.push(val);
 			memory_tile_ids.push(tile.id);
@@ -170,8 +228,10 @@ function memoryFlipTile(tile,val){
 </script>
 </head>
 <body>
-<h1>Memoreyes Offline</h1>
-<h2><a href="/offline-beta">Choose a new theme</a></h2>
+<div class="content">
+<h1 id="title">Memoreyes</h1>
+<!-- <h6><a href="/offline-beta">Choose a new theme</a></h6> -->
+<!-- <h2><a href="/offline-beta">Choose a new theme</a></h2> -->
 <div id="memory_board"></div>
 <script>newBoard();</script>
 <!-- The Modal -->
@@ -185,10 +245,11 @@ function memoryFlipTile(tile,val){
     </div>
     <div class="modal-body">
       <p>All tiles are open... Generating a new borad</p>
+      <p>or</p>
       <a href="/offline-beta/">Return to theme selector</a>
     </div>
     <div class="modal-footer">
-      <h3>Memoreyes by © Appelboom</h3>
+      <h3>© Appelboom Inc.</h3>
     </div>
   </div>
 
@@ -196,6 +257,12 @@ function memoryFlipTile(tile,val){
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');
+
+var h1 = document.getElementById('title');
+
+h1.onclick = function() {
+  window.location.assign('/offline-beta');
+}
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -212,5 +279,7 @@ window.onclick = function(event) {
     }
 }
 </script>
+</div>
+<footer class="content">© Appelboom Inc.</footer>
 </body>
 </html>

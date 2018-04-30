@@ -6,4 +6,4 @@ class ThemeChoiceField(forms.ModelChoiceField):
          return obj.name
 
 class ThemeForm(forms.Form):
-    theme = ThemeChoiceField(Theme.objects.all().exclude(name='Covers'), label='Theme', required=True)
+    theme = ThemeChoiceField(Theme.objects.all().exclude(name='Covers').exclude(name='SiteAssets'), label='', required=True)

@@ -3,7 +3,7 @@ from .forms import ThemeForm
 from images.models import Image, Theme
 # Create your views here.
 def index(request):
-    return render(request, 'offline/index.html', {'form': ThemeForm()})
+    return render(request, 'offline/index.html', {'form': ThemeForm(initial={'theme': Theme.objects.get(name="Theme")})})
 
 def game(request):
     if request.method == 'POST':

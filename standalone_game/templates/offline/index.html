@@ -3,16 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <title>Memoreyes</title>
+  <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+  <style>
+  *{
+  font-family: 'Black Han Sans', sans-serif;
+  }
+  body{
+    /*background: url("/media/images/gardient-bg.jpg") no-repeat center center fixed;*/
+    background-color: rebeccapurple;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .content{
+  text-align: center;
+  background-color: rgba(255,255,255, 0.75);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px;
+  }
+  select {
+    padding: 16px 50px;
+    border-radius: 10px;
+    border: solid rebeccapurple;
+    background-color: rgba(255,255,255,0.0);
+    margin-bottom: 10px;
+    color: rebeccapurple;
+}
+
+input[type=submit] {
+    background-color: rgba(255,255,255, 0.0);
+    color: rebeccapurple;
+    padding: 12px 20px;
+    border: solid rebeccapurple;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.grad1 {
+    background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, blue, violet);
+    background: linear-gradient(to right, orange , yellow, green, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.grad2 {
+    background: red;
+    background: -webkit-linear-gradient(left, #cb8200 , #ff4d30);
+    background: -o-linear-gradient(right, #cb8200, #ff2623);
+    background: -moz-linear-gradient(right, #cb8200, #ff2623);
+    background: linear-gradient(to right, #cb8200 , #ff2623);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h1{
+font-size: 75px;
+}
+.rebecca{
+color: rebeccapurple;
+}
+
+footer{
+color: rebeccapurple;
+}
+</style>
 </head>
 <body>
-<h1>Welcome to Memoreyes Offline</h1>
-<h3>Choose your game theme</h3>
-<form action="/offline-beta/game" method="post">
-    {{ errors }}
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Start" />
-</form>
-<footer>© Appelboom Inc.</footer>
+<div class="content">
+    <h1 class="rebecca">Memoreyes</h1>
+    <h3 class="rebecca">Kies je thema</h3>
+    <form action="/offline-beta/game" method="post">
+        {{ errors }}
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <input type="submit" value="Start" />
+    </form>
+</div>
+<footer class="content">© Appelboom Inc.</footer>
 </body>
 </html>
