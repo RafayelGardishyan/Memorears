@@ -8,12 +8,10 @@
   font-family: 'Black Han Sans', sans-serif;
   }
   body{
-    /*background: url("/media/images/gardient-bg.jpg") no-repeat center center fixed;*/
-    background-color: rebeccapurple;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+            -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
   }
 
 div#memory_board{
@@ -149,6 +147,23 @@ color: rebeccapurple;
 }
 footer{
 color: rebeccapurple;
+}
+@keyframes bgcolor {
+    0% {
+        background-color: rebeccapurple;
+    }
+
+    25% {
+        background-color: #962e99;
+    }
+
+    75% {
+        background-color: #381d55;
+    }
+
+    100% {
+        background-color: rebeccapurple;
+    }
 }
 </style>
 <script>

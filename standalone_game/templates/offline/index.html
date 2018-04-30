@@ -9,16 +9,14 @@
   font-family: 'Black Han Sans', sans-serif;
   }
   body{
-    /*background: url("/media/images/gardient-bg.jpg") no-repeat center center fixed;*/
-    background-color: rebeccapurple;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+        -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
   }
   .content{
   text-align: center;
-  background-color: rgba(255,255,255, 0.75);
+  background-color: rgba(255,255,255, 0.60);
   border-radius: 10px;
   padding: 20px;
   margin: 30px;
@@ -40,24 +38,24 @@ input[type=submit] {
     border-radius: 10px;
     cursor: pointer;
 }
-.grad1 {
-    background: red;
-    background: -webkit-linear-gradient(left, orange , yellow, green, blue, violet);
-    background: -o-linear-gradient(right, orange, yellow, green, blue, violet);
-    background: -moz-linear-gradient(right, orange, yellow, green, blue, violet);
-    background: linear-gradient(to right, orange , yellow, green, blue, violet);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.grad2 {
-    background: red;
-    background: -webkit-linear-gradient(left, #cb8200 , #ff4d30);
-    background: -o-linear-gradient(right, #cb8200, #ff2623);
-    background: -moz-linear-gradient(right, #cb8200, #ff2623);
-    background: linear-gradient(to right, #cb8200 , #ff2623);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+/*.grad1 {*/
+    /*background: red;*/
+    /*background: -webkit-linear-gradient(left, orange , yellow, green, blue, violet);*/
+    /*background: -o-linear-gradient(right, orange, yellow, green, blue, violet);*/
+    /*background: -moz-linear-gradient(right, orange, yellow, green, blue, violet);*/
+    /*background: linear-gradient(to right, orange , yellow, green, blue, violet);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+/*}*/
+/*.grad2 {*/
+    /*background: red;*/
+    /*background: -webkit-linear-gradient(left, #cb8200 , #ff4d30);*/
+    /*background: -o-linear-gradient(right, #cb8200, #ff2623);*/
+    /*background: -moz-linear-gradient(right, #cb8200, #ff2623);*/
+    /*background: linear-gradient(to right, #cb8200 , #ff2623);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+/*}*/
 h1{
 font-size: 75px;
 }
@@ -67,6 +65,24 @@ color: rebeccapurple;
 
 footer{
 color: rebeccapurple;
+}
+
+@keyframes bgcolor {
+    0% {
+        background-color: rebeccapurple;
+    }
+
+    25% {
+        background-color: #962e99;
+    }
+
+    75% {
+        background-color: #381d55;
+    }
+
+    100% {
+        background-color: rebeccapurple;
+    }
 }
 </style>
 </head>
