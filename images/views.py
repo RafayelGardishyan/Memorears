@@ -10,7 +10,7 @@ def index(request):
     return render(request, 'settings_index.html', {})
 
 def themes_index(request):
-    themes = Theme.objects.all()
+    themes = Theme.objects.all().order_by('name')
     return render(request, 'themes_index.html', {'themes': themes})
 
 def themes_add(request):
@@ -34,7 +34,7 @@ def themes_delete(request, id):
     return redirect('/settings/themes')
 
 def images_index(request):
-    images = Image.objects.all()
+    images = Image.objects.all().order_by('theme')
     return render(request, 'images_index.html', {'images': images})
 
 def images_add(request):

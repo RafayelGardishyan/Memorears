@@ -3,17 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <title>Themes</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+  *{
+  font-family: 'Roboto', sans-serif;
+  }
+  body{
+  background: cornflowerblue;
+  }
+  .content{
+  text-align: center;
+  background-color: rgba(255,255,255, 0.60);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px;
+  }
+  a:link, a:visited {
+  border-radius: 15px;
+    background-color: #414af4;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: #131480;
+}
+
+#homebutton{
+width: 90%;
+background-color: #ff8c32;
+}
+
+#homebutton:hover, #homebutton:active{
+background-color: #ee742f;
+}
+#addbutton{
+width: 90%;
+background-color: #ff212f;
+}
+
+#addbutton:hover, #addbutton:active{
+background-color: #b81217;
+}
+table {
+    margin: 0 auto;
+    border: none;
+    width: 100%;
+    border-radius: 15px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: none;
+}
+</style>
 </head>
 <body>
+<div class="content">
 <h1>Themes</h1>
-<h3><a href="/settings">Back to settings home</a></h3>
-<hr>
-<a href="/settings/themes/add">Add a new theme</a>
-<hr>
+<h3><a id="homebutton" href="/settings">Back to settings home</a></h3>
+<a id="addbutton" href="/settings/themes/add">Add a new theme</a>
 <table border="1">
     {% for theme in themes %}
     <tr><th>{{ theme.name }}</th><th>{{ theme.description|truncatechars:20 }}</th><th><a href="/settings/themes/delete/{{ theme.id }}">Delete this theme</a></th></tr>
     {% endfor %}
 </table>
+</div>
+<footer class="content">© Appelboom Inc.</footer>
 </body>
 </html>

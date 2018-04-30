@@ -3,11 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <title>Settings</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+  *{
+  font-family: 'Roboto', sans-serif;
+  }
+  body{
+  background: cornflowerblue;
+  }
+  .content{
+  text-align: center;
+  background-color: rgba(255,255,255, 0.60);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px;
+  }
+  a:link, a:visited {
+  border-radius: 15px;
+    background-color: #414af4;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: #131480;
+}
+
+#homebutton{
+width: 80%;
+background-color: #ff8c32;
+}
+
+#homebutton:hover, #homebutton:active{
+background-color: #ee742f;
+}
+
+.setting{
+width: 38.1%;
+}
+</style>
 </head>
 <body>
-<h1>Settings/Images Home</h1>
-<h4><a href="/">Back to home</a></h4>
-<a href="/settings/themes">Themes</a>
-<a href="/settings/images">Images</a>
+<div class="content">
+<h1>Settings Home</h1>
+<h4><a id="homebutton" href="/">Back to home</a></h4>
+<a class="setting" href="/settings/themes">Themes</a>
+<a class="setting" href="/settings/images">Images</a>
+</div>
+<footer class="content">
+© Appelboom Inc.
+</footer>
 </body>
 </html>
