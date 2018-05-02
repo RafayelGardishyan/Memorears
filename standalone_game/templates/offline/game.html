@@ -33,6 +33,10 @@ div#memory_board > div{
 	font-size:64px;
 	cursor:pointer;
 	text-align:center;
+                -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
 
 .image{
@@ -77,7 +81,7 @@ transition: 2s;
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
 a:link, a:visited {
@@ -151,7 +155,12 @@ h1{
     animation-direction: alternate;
 }
 footer{
-color: rebeccapurple;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
 @keyframes bgcolor {
     0% {
@@ -168,6 +177,27 @@ color: rebeccapurple;
 
     100% {
         background-color: rebeccapurple;
+    }
+}
+@keyframes item {
+    0% {
+        color: rebeccapurple;
+        border: solid rebeccapurple;
+    }
+
+    25% {
+        color: #962e99;
+        border: solid #962e99;
+    }
+
+    75% {
+        color: #381d55;
+        border: solid #381d55;
+    }
+
+    100% {
+        color: rebeccapurple;
+        border: solid rebeccapurple;
     }
 }
 </style>

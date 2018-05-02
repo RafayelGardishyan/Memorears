@@ -22,21 +22,29 @@
   margin: 30px;
   }
   select {
+
     padding: 16px 50px;
     border-radius: 10px;
     border: solid rebeccapurple;
     background-color: rgba(255,255,255,0.0);
     margin-bottom: 10px;
-    color: rebeccapurple;
+              -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
 
 input[type=submit] {
+
     background-color: rgba(255,255,255, 0.0);
-    color: rebeccapurple;
     padding: 12px 20px;
     border: solid rebeccapurple;
     border-radius: 10px;
     cursor: pointer;
+            -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
 /*.grad1 {*/
     /*background: red;*/
@@ -60,11 +68,21 @@ h1{
 font-size: 75px;
 }
 .rebecca{
-color: rebeccapurple;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
 
 footer{
-color: rebeccapurple;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
 
 @keyframes bgcolor {
@@ -82,6 +100,27 @@ color: rebeccapurple;
 
     100% {
         background-color: rebeccapurple;
+    }
+}
+@keyframes item {
+    0% {
+        color: rebeccapurple;
+        border: solid rebeccapurple;
+    }
+
+    25% {
+        color: #962e99;
+        border: solid #962e99;
+    }
+
+    75% {
+        color: #381d55;
+        border: solid #381d55;
+    }
+
+    100% {
+        color: rebeccapurple;
+        border: solid rebeccapurple;
     }
 }
 </style>
