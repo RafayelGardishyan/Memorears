@@ -143,7 +143,12 @@ a:hover, a:active {
   margin: 20px;
   }
 h1{
-color: rebeccapurple;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
 footer{
 color: rebeccapurple;
@@ -276,7 +281,7 @@ var modal = document.getElementById('myModal');
 var h1 = document.getElementById('title');
 
 h1.onclick = function() {
-  window.location.assign('/offline-beta');
+  window.location.assign('/');
 }
 
 // Get the <span> element that closes the modal
