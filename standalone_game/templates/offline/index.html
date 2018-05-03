@@ -123,20 +123,36 @@ footer{
         border: solid rebeccapurple;
     }
 }
+.disabled{
+background-color: rgba(100,100,100,0.5);
+}
 </style>
 </head>
 <body>
 <div class="content">
     <h1 class="rebecca">Memoreyes</h1>
-    <h3 class="rebecca">Kies je thema</h3>
+    <div class="content disabled">
+        <h3 class="rebecca">Kies de hoeveelheid spelers</h3>
+        <p class="rebecca"><input type="radio" id="disabled1">1 Player
+        <input type="radio" id="disabled2">2 Player</p><br>
+    </div>
     <form action="/game" method="post">
+        <div class="content">
+        <h3 class="rebecca">Kies de thema</h3>
         {{ errors }}
         {% csrf_token %}
         {{ form }}
         <br>
+        </div>
+        <div class="content">
         <input type="submit" value="Start" />
+        </div>
     </form>
 </div>
+<script >
+document.getElementById('disabled1').disabled = true;
+document.getElementById('disabled2').disabled = true;
+</script>
 <footer class="content">© Appelboom Inc.</footer>
 </body>
 </html>
