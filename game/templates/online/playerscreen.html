@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Player</title>
+  <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+  <style>
+    *{
+    font-family: 'Black Han Sans',sans-serif;
+    }
+    .content{
+  text-align: center;
+  background-color: rgba(255,255,255, 0.60);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px;
+  }
+  body{
+  background-color: rebeccapurple;
+  }
+  .hidden{
+  display: none;
+  }
+  h1{
+    margin-top: 50%;
+    font-size: 100px;
+    color: rebeccapurple;
+  }
+  input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 90px;
+    margin-bottom: 100%;
+    color: rebeccapurple;
+    text-align: center;
+}
+.clickablebutton{
+  font-size: 120px;
+}
+.buttonhok{
+  padding-left: 2.1%;
+  padding-right: 2.1%;
+}
+.buttonrow{
+  padding: 10%;
+}
+#buttons{
+  margin-top: 50%;
+  margin-bottom: 65%;
+}
+
+button{
+    background-color: #555555; /* Green */
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+</style>
+</head>
+<body>
+<div id="beforegame" class="content">
+<h1>Game Pin <br><input onchange="checkpin(this)" type="text" autofocus></h1>
+</div>
+<div id="game" class="content hidden">
+
+  <table id="buttons"></table>
+
+</div>
+<script>
+function checkpin(inputfield) {
+  if (inputfield.value.length === 5){
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("beforegame").classList.add('hidden');
+            document.getElementById("game").classList.remove('hidden');
+      }
+    };
+    xhttp.open("GET", "/getgame/"+inputfield.value, true);
+    xhttp.send();
+    }
+  }
+
+for (i = 0; i < 4; i++){
+  document.getElementById('buttons').innerHTML += '<tr class="buttonrow" id="row_' + i + '"></tr>'
+  for(j = 0; j < 6; j++){
+    id = i * 6 + j
+    document.getElementById('row_' + i).innerHTML += '<th class="buttonhok" onclick="send(' + id + ')"><button class="clickablebutton"> O </button></th>'
+  }
+}
+
+function send(id) {
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            console.console.log(this.responseText);
+      }
+    };
+    xhttp.open("GET", "/set/opencard/"+id, true);
+    xhttp.send();
+    }
+
+</script>
+</body>
+</html>

@@ -1,12 +1,17 @@
+import random
+
 from django.db import models
 from django.db.models import CASCADE
 
 from images.models import Image
 # Create your models here.
 
+def generate_game_id():
+    return random.randint(11111, 99999)
 
 class Game(models.Model):
-    mode = models.CharField(max_length=8)
-    player1_score = models.IntegerField()
-    player2_score = models.IntegerField()
-    card_image_sequence = models.ManyToManyField(Image, null=True, blank=True)
+    player1_score = models.IntegerField(default=0)
+    player2_score = models.IntegerField(default=0)
+    opencard1 = models.IntegerField(blank=True, null=True)
+    opencard2 = models.IntegerField(blank=True, null=True)
+    joinid = models.IntegerField(default=generate_game_id)

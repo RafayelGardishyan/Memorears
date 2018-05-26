@@ -22,6 +22,6 @@ from Memoreyes import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('settings/', include('images.urls')),
-    path('request/', include('game.urls')),
+    path('', include('game.urls')),
     path('', include('standalone_game.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

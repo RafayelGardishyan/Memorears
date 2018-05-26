@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Memoreyes</title>
+<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+<style>
+  *{
+  font-family: 'Black Han Sans', sans-serif;
+  }
+  body{
+            -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  }
+
+div#memory_board{
+	background: rgba(255, 255, 255, 0.0);
+	width:850px;
+	height:540px;
+	padding:24px;
+	margin:0px auto;
+}
+div#memory_board > div{
+	background: url('{{ cover }}') no-repeat;
+	background-size: 116px 116px;
+	border:rebeccapurple 3px solid;
+	border-radius: 15px;
+	width:113px;
+	height:113px;
+	float:left;
+	margin:10px;
+	font-size:64px;
+	cursor:pointer;
+	text-align:center;
+                -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+.image{
+border-radius: 15px;
+transition: 2s;
+}
+
+.grad1 {
+    background: red;
+    background: -webkit-linear-gradient(left, orange , #ff8c32, blue, violet);
+    background: -o-linear-gradient(right, orange, #ffae20, blue, violet);
+    background: -moz-linear-gradient(right, orange, #ffbf2b, blue, violet);
+    background: linear-gradient(to right, orange , #ffb021, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+a:link, a:visited {
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 15px;
+    padding: 25px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 15px;
+}
+
+
+a:hover, a:active {
+    background-color: #522d7f;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: rebeccapurple;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: rebeccapurple;
+    color: white;
+}
+  .content{
+  text-align: center;
+  background-color: rgba(255,255,255, 0.75);
+  border-radius: 10px;
+  padding: 11px;
+  margin: 20px;
+  }
+h1{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+footer{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+@keyframes bgcolor {
+    0% {
+        background-color: rebeccapurple;
+    }
+
+    25% {
+        background-color: #962e99;
+    }
+
+    75% {
+        background-color: #381d55;
+    }
+
+    100% {
+        background-color: rebeccapurple;
+    }
+}
+@keyframes item {
+    0% {
+        color: rebeccapurple;
+        border: solid rebeccapurple;
+    }
+
+    25% {
+        color: #962e99;
+        border: solid #962e99;
+    }
+
+    75% {
+        color: #381d55;
+        border: solid #381d55;
+    }
+
+    100% {
+        color: rebeccapurple;
+        border: solid rebeccapurple;
+    }
+}
+</style>
+<script>
+var memory_array = ["{{ image1 }}", "{{ image1 }}",
+                    "{{ image2 }}", "{{ image2 }}",
+                    "{{ image3 }}", "{{ image3 }}",
+                    "{{ image4 }}", "{{ image4 }}",
+                    "{{ image5 }}", "{{ image5 }}",
+                    "{{ image6 }}", "{{ image6 }}",
+                    "{{ image7 }}", "{{ image7 }}",
+                    "{{ image8 }}", "{{ image8 }}",
+                    "{{ image9 }}", "{{ image9 }}",
+                    "{{ image10 }}", "{{ image10 }}",
+                    "{{ image11 }}", "{{ image11 }}",
+                    "{{ image12 }}", "{{ image12 }}",
+];
+var memory_values = [];
+var memory_tile_ids = [];
+var tiles_flipped = 0;
+Array.prototype.memory_tile_shuffle = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+function newBoard(){
+	tiles_flipped = 0;
+	var output = '';
+    memory_array.memory_tile_shuffle();
+	for(var i = 0; i < memory_array.length; i++){
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(i,\''+memory_array[i]+'\')"></div>';
+	}
+	document.getElementById('memory_board').innerHTML = output;
+}
+function memoryFlipTile(tileid,val){
+    tile = document.getElementById("tile_" + tileid)
+	if(tile.innerHTML == "" && memory_values.length < 2){
+		tile.style.backgroundSize = '0px 0px;';
+		tile.innerHTML = '<img class="image" src="' + val + '" height="113" width="113">';
+		if(memory_values.length == 0){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+		} else if(memory_values.length == 1){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+			if(memory_values[0] == memory_values[1]){
+				tiles_flipped += 2;
+				// Clear both arrays
+				memory_values = [];
+            	memory_tile_ids = [];
+				// Check to see if the whole board is cleared
+				if(tiles_flipped == memory_array.length){
+					modal.style.display = "block";
+					document.getElementById('memory_board').innerHTML = "";
+					newBoard();
+				}
+			} else {
+				function flip2Back(){
+				    // Flip the 2 tiles back over
+				    var tile_1 = document.getElementById(memory_tile_ids[0]);
+				    var tile_2 = document.getElementById(memory_tile_ids[1]);
+				    tile_1.style.backgroundSize = '116px 116px;';
+            	    tile_1.innerHTML = "";
+				    tile_2.style.backgroundSize = '116px 116px;';
+            	    tile_2.innerHTML = "";
+				    // Clear both arrays
+				    memory_values = [];
+            	    memory_tile_ids = [];
+//                    reset();
+				}
+				setTimeout(flip2Back, 700);
+			}
+			reset();
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div class="content">
+<h1 id="title">Memoreyes</h1>
+<!-- <h6><a href="/offline-beta">Choose a new theme</a></h6> -->
+<!-- <h2><a href="/offline-beta">Choose a new theme</a></h2> -->
+<div id="memory_board"></div>
+<script>newBoard();</script>
+<!-- The Modal -->
+<script>
+var ajaxinterval = setInterval(function() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            console.log(response.opencard1);
+            console.log(response.opencard2);
+            if (response.opencard1 !== null || response.opencard1 !== 25){
+                memoryFlipTile(response.opencard1, memory_array[response.opencard1]);
+            }
+            if (response.opencard2 !== null || response.opencard2 !== 25){
+                memoryFlipTile(response.opencard2, memory_array[response.opencard2]);
+            }
+    }
+  };
+  xhttp.open("GET", "/getgame", true);
+  xhttp.send();
+}, 500);
+
+
+function reset() {
+  var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            return true;
+    }
+  };
+  xhttp.open("GET", "/set/resetcards", true);
+  xhttp.send();
+}
+</script>
+</div>
+<footer class="content">© Appelboom Inc.</footer>
+</body>
+</html>

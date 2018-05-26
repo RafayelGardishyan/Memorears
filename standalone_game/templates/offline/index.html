@@ -8,6 +8,19 @@
   *{
   font-family: 'Black Han Sans', sans-serif;
   }
+
+  ul{
+  list-style-type: none;
+  margin-right: 3%;
+  }
+  ul>li{
+      -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  }
   body{
         -webkit-animation: bgcolor 20s infinite;
     animation: bgcolor 10s infinite;
@@ -46,24 +59,6 @@ input[type=submit] {
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }
-/*.grad1 {*/
-    /*background: red;*/
-    /*background: -webkit-linear-gradient(left, orange , yellow, green, blue, violet);*/
-    /*background: -o-linear-gradient(right, orange, yellow, green, blue, violet);*/
-    /*background: -moz-linear-gradient(right, orange, yellow, green, blue, violet);*/
-    /*background: linear-gradient(to right, orange , yellow, green, blue, violet);*/
-    /*-webkit-background-clip: text;*/
-    /*-webkit-text-fill-color: transparent;*/
-/*}*/
-/*.grad2 {*/
-    /*background: red;*/
-    /*background: -webkit-linear-gradient(left, #cb8200 , #ff4d30);*/
-    /*background: -o-linear-gradient(right, #cb8200, #ff2623);*/
-    /*background: -moz-linear-gradient(right, #cb8200, #ff2623);*/
-    /*background: linear-gradient(to right, #cb8200 , #ff2623);*/
-    /*-webkit-background-clip: text;*/
-    /*-webkit-text-fill-color: transparent;*/
-/*}*/
 h1{
 font-size: 75px;
 }
@@ -131,14 +126,9 @@ background-color: rgba(100,100,100,0.5);
 <body>
 <div class="content">
     <h1 class="rebecca">Memoreyes</h1>
-    <div class="content disabled">
-        <h3 class="rebecca">Kies de hoeveelheid spelers</h3>
-        <p class="rebecca"><input type="radio" id="disabled1">1 Player
-        <input type="radio" id="disabled2">2 Player</p><br>
-    </div>
     <form action="/game" method="post">
         <div class="content">
-        <h3 class="rebecca">Kies de thema</h3>
+        <h3 class="rebecca">Kies het thema en de hoeveelheid spelers</h3>
         {{ errors }}
         {% csrf_token %}
         {{ form }}
@@ -149,10 +139,6 @@ background-color: rgba(100,100,100,0.5);
         </div>
     </form>
 </div>
-<script >
-document.getElementById('disabled1').disabled = true;
-document.getElementById('disabled2').disabled = true;
-</script>
 <footer class="content">© Appelboom Inc.</footer>
 </body>
 </html>
