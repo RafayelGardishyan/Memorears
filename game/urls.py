@@ -4,6 +4,8 @@ from . import views
 urlpatterns = [
     path('getgame', views.get),
     path('getgame/<int:id>', views.getwid),
+    path('setonline/<int:id>', views.setonline),
+    path('changeturn', views.change_turn),
     path('set/score/<int:player>/<int:plus>', views.setscore),
     path('set/opencard/<int:cardid>', views.setopencard),
     path('set/resetcards', views.reset),

@@ -14,4 +14,7 @@ class Game(models.Model):
     player2_score = models.IntegerField(default=0)
     opencard1 = models.IntegerField(blank=True, null=True)
     opencard2 = models.IntegerField(blank=True, null=True)
+    p1_online = models.BooleanField(default=False)
+    p2_online = models.BooleanField(default=False)
+    turn = models.IntegerField(default=1)
     joinid = models.IntegerField(default=generate_game_id)

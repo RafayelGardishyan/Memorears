@@ -43,8 +43,8 @@
 <script >
 var timeleft = 30;
 var downloadTimer = setInterval(function(){
-  $("#progressBar").value = 30 - --timeleft;
-  $("#timeleft").innerHTML = timeleft
+  document.getElementById("progressBar").value = 30 - --timeleft;
+  document.getElementById("timeleft").innerHTML = timeleft
   if(timeleft <= 0)
     clearInterval(downloadTimer);
 

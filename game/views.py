@@ -4,9 +4,15 @@ from .models import Game
 from images.models import Image, Theme
 
 
-values = {
-    'previous_player': None
-}
+def change_turn(request):
+    g = Game.objects.get(joinid=int(request.session['game_id']))
+    if g.turn == 1:
+        g.turn = 2
+    elif g.turn == 2:
+        g.turn = 1
+    g.save()
+    return JsonResponse([True], safe=False)
+
 
 def index(request):
     theme = int(request.session['theme'])
@@ -38,12 +44,13 @@ def index(request):
     })
 
 
-def setopencard(request, cardid):
+def setopencard(request, cardid, player):
     g = Game.objects.get(joinid=int(request.session['game_id']))
-    if g.opencard1 == 25 or g.opencard1 == None:
-        g.opencard1 = cardid
-    elif g.opencard1 <= 25:
-        g.opencard2 = cardid
+    if player == g.turn:
+        if g.opencard1 == 25 or g.opencard1 == None:
+            g.opencard1 = cardid
+        elif g.opencard1 <= 25:
+            g.opencard2 = cardid
     g.save()
     return JsonResponse([g.opencard1, g.opencard2], safe=False)
 
@@ -64,12 +71,12 @@ def resetscore(request):
 
 def setscore(request, player, plus):
     g = Game.objects.get(joinid=int(request.session['game_id']))
-    if player == "1":
+    if player == 1:
         g.player1_score += plus
-    elif player == "2":
+    elif player == 2:
         g.player2_score += plus
     else:
-        return JsonResponse([False])
+        return JsonResponse([False], safe=False)
     g.save()
     return JsonResponse([g.player1_score, g.player2_score, True], safe=False)
 
@@ -92,8 +99,10 @@ def get(request):
         'opencard1': g.opencard1,
         'opencard2': g.opencard2,
         'player1_score': g.player1_score,
-        'player2_score': g.player2_score
+        'player2_score': g.player2_score,
+        'turn': g.turn
     }, safe=False)
+
 
 def getwid(request, id):
     g = Game.objects.get(joinid=id)
@@ -103,8 +112,24 @@ def getwid(request, id):
         'opencard1': g.opencard1,
         'opencard2': g.opencard2,
         'player1_score': g.player1_score,
-        'player2_score': g.player2_score
+        'player2_score': g.player2_score,
+        'turn': g.turn
     }, safe=False)
+
 
 def playerscreen(request):
     return render(request, 'online/playerscreen.html', {})
+
+
+def setonline(request, id):
+    g = Game.objects.get(joinid=id)
+    if not g.p1_online:
+        g.p1_online = True
+        g.save()
+        return JsonResponse([1], safe=False)
+    elif g.p1_online and not g.p2_online:
+        g.p2_online = True
+        g.save()
+        return JsonResponse([2], safe=False)
+    else:
+        return JsonResponse([False], safe=False)
