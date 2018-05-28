@@ -214,6 +214,18 @@ padding: 10px;
 }
 </style>
 <script>
+let plus;
+function set_score() {
+  let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+          plus = 0;
+          console.log(this.responseText);
+    }
+  };
+  xhttp.open("GET", "/set/score/" + turn.toString() + "/" + plus, true);
+  xhttp.send();
+}
 let memory_array = ["{{ image1 }}", "{{ image1 }}",
                     "{{ image2 }}", "{{ image2 }}",
                     "{{ image3 }}", "{{ image3 }}",
@@ -244,7 +256,7 @@ function newBoard(){
 	let output = '';
     memory_array.memory_tile_shuffle();
 	for(let i = 0; i < memory_array.length; i++){
-		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(i,\''+memory_array[i]+'\')"></div>';
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(' + i + ',\''+memory_array[i]+'\')"></div>';
 	}
 	document.getElementById('memory_board').innerHTML = output;
 }
@@ -260,6 +272,8 @@ function memoryFlipTile(tileid,val){
 			memory_values.push(val);
 			memory_tile_ids.push(tile.id);
 			if(memory_values[0] === memory_values[1]){
+			    console.log("Change Score");
+			    plus = 1;
 			    set_score();
 				tiles_flipped += 2;
 				// Clear both arrays
@@ -269,7 +283,7 @@ function memoryFlipTile(tileid,val){
 				if(tiles_flipped === memory_array.length){
 					modal.style.display = "block";
 					document.getElementById('memory_board').innerHTML = "";
-					resetscore()
+					resetscore();
 					newBoard();
 				}
 			} else {
@@ -361,17 +375,6 @@ function changeturn() {
     }
   };
   xhttp.open("GET", "/changeturn", true);
-  xhttp.send();
-}
-
-function set_score() {
-  let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            return true;
-    }
-  };
-  xhttp.open("GET", "/set/score/" + turn.toString() + "/1", true);
   xhttp.send();
 }
 
