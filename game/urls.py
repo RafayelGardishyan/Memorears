@@ -7,7 +7,7 @@ urlpatterns = [
     path('setonline/<int:id>', views.setonline),
     path('changeturn', views.change_turn),
     path('set/score/<int:player>/<int:plus>', views.setscore),
-    path('set/opencard/<int:cardid>', views.setopencard),
+    path('set/opencard/<int:cardid>/<int:player>', views.setopencard),
     path('set/resetcards', views.reset),
     path('set/resetscore', views.resetscore),
     path('player', views.playerscreen),
