@@ -288,10 +288,10 @@ function memoryFlipTile(tileid, val){
             	memory_tile_ids = [];
 				// Check to see if the whole board is cleared
 				if(tiles_flipped === memory_array.length){
-					modal.style.display = "block";
+//					modal.style.display = "block";
 					document.getElementById('memory_board').innerHTML = "";
 					resetscore();
-					newBoard();
+					window.location.reload();
 				}
 			} else {
 				function flip2Back(){
@@ -392,7 +392,7 @@ function resetscore() {
   let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            return true;
+            console.log(this.responseText);
     }
   };
   xhttp.open("GET", "/set/resetscore", true);
