@@ -129,10 +129,10 @@ function send(id) {
         colorinterval()
     }else if (opencards.length < 2){
         opencards.push(id);
-        colorinterval()
+        colorinterval();
         setTimeout(function() {
 
-        colorintervalBack()
+        colorintervalBack();
         opencards = [];
         }, 1000)
     }
@@ -177,7 +177,7 @@ let ajaxinterval = setInterval(function() {
       };
       xhttp.open("GET", "/getgame", true);
       xhttp.send();
-}, 500);
+}, 1000);
 </script>
 </body>
 </html>

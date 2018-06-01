@@ -214,7 +214,8 @@ padding: 10px;
 }
 </style>
 <script>
-let plus;
+let plus = 0;
+let doo = 0;
 function set_score() {
   let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -260,7 +261,10 @@ function newBoard(){
 	}
 	document.getElementById('memory_board').innerHTML = output;
 }
-function memoryFlipTile(tileid,val){
+function memoryFlipTile(tileid, val){
+    if (tileid === 25 || tileid === null){
+        return false;
+    }
     tile = document.getElementById("tile_" + tileid);
 	if(tile.innerHTML === "" && memory_values.length < 2){
 		tile.style.backgroundSize = '0px 0px;';
@@ -274,7 +278,10 @@ function memoryFlipTile(tileid,val){
 			if(memory_values[0] === memory_values[1]){
 			    console.log("Change Score");
 			    plus = 1;
-			    set_score();
+//			    plus = 1;
+//			    set_score();
+//			    plus = 1;
+//			    set_score();
 				tiles_flipped += 2;
 				// Clear both arrays
 				memory_values = [];
@@ -288,6 +295,7 @@ function memoryFlipTile(tileid,val){
 				}
 			} else {
 				function flip2Back(){
+				    doo = 1;
 				    // Flip the 2 tiles back over
 				    let tile_1 = document.getElementById(memory_tile_ids[0]);
 				    let tile_2 = document.getElementById(memory_tile_ids[1]);
@@ -300,8 +308,7 @@ function memoryFlipTile(tileid,val){
             	    memory_tile_ids = [];
 //                    reset();
 				}
-				setTimeout(flip2Back, 700);
-				changeturn()
+				setTimeout(flip2Back, 1000);
 			}
 			reset();
 		}
@@ -319,8 +326,22 @@ function memoryFlipTile(tileid,val){
 <script>newBoard();</script>
 <!-- The Modal -->
 <script>
-let turn;
+function changeturn() {
+  let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            doo = 0;
+            console.log(this.responseText);
+            return true;
+    }
+  };
+  xhttp.open("GET", "/changeturn/" + doo, true);
+  xhttp.send();
+}
+let turn = 1;
 let ajaxinterval = setInterval(function() {
+    set_score();
+    changeturn();
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -353,7 +374,7 @@ let ajaxinterval = setInterval(function() {
   };
   xhttp.open("GET", "/getgame", true);
   xhttp.send();
-}, 500);
+}, 1000);
 
 
 function reset() {
@@ -364,17 +385,6 @@ function reset() {
     }
   };
   xhttp.open("GET", "/set/resetcards", true);
-  xhttp.send();
-}
-
-function changeturn() {
-  let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            return true;
-    }
-  };
-  xhttp.open("GET", "/changeturn", true);
   xhttp.send();
 }
 

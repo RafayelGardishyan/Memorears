@@ -4,7 +4,9 @@ from .models import Game
 from images.models import Image, Theme
 
 
-def change_turn(request):
+def change_turn(request, do):
+    if do == 0:
+        return JsonResponse([False], safe=False)
     g = Game.objects.get(joinid=int(request.session['game_id']))
     if g.turn == 1:
         g.turn = 2
