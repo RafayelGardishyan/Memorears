@@ -4,35 +4,7 @@
   <meta charset="UTF-8">
   <title>Lobby</title>
   <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
-  <style>
-    *{
-    font-family: 'Black Han Sans',sans-serif;
-    }
-    .content{
-  text-align: center;
-  background-color: rgba(255,255,255, 0.60);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 30px;
-  }
-  body{
-  background-color: rebeccapurple;
-  }
-  progress[value] {
-  /* Reset the default appearance */
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-
-  /* Get rid of default border in Firefox. */
-  border: none;
-
-  /* Dimensions */
-  width: 250px;
-  height: 20px;
-}
-
-</style>
+<link rel="stylesheet" href="/media/css/game_online_lobby.css">
 </head>
 <body>
 <div class="content">
@@ -41,23 +13,6 @@
 <h4>You will be redirected in <span id="timeleft">30</span> seconds</h4>
 <progress value="0" max="30" id="progressBar"></progress>
 </div>
-<script >
-var timeleft = 30;
-var downloadTimer = setInterval(function(){
-  document.getElementById("progressBar").value = 30 - --timeleft;
-  document.getElementById("timeleft").innerHTML = timeleft
-  if(timeleft <= 0)
-    clearInterval(downloadTimer);
-
-},1000);
-
-// Your application has indicated there's an error
-window.setTimeout(function(){
-    // Move to a new location or you can do something else
-    window.location.href = "/online";
-}, 30000);
-
-
-</script>
+<script src="/media/js/lobby.js"></script>
 </body>
 </html>

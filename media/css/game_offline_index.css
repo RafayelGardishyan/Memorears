@@ -1,0 +1,116 @@
+  *{
+  font-family: 'Black Han Sans', sans-serif;
+  }
+
+  ul{
+  list-style-type: none;
+  margin-right: 3%;
+  }
+  ul>li{
+      -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  }
+  body{
+        -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  }
+  .content{
+  text-align: center;
+  background-color: rgba(255,255,255, 0.60);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px;
+  }
+  select {
+
+    padding: 16px 50px;
+    border-radius: 10px;
+    border: solid rebeccapurple;
+    background-color: rgba(255,255,255,0.0);
+    margin-bottom: 10px;
+              -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+input[type=submit] {
+
+    background-color: rgba(255,255,255, 0.0);
+    padding: 12px 20px;
+    border: solid rebeccapurple;
+    border-radius: 10px;
+    cursor: pointer;
+            -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+h1{
+font-size: 75px;
+}
+.rebecca{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+footer{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+                -webkit-animation: item 20s infinite;
+    animation: item 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+@keyframes bgcolor {
+    0% {
+        background-color: rebeccapurple;
+    }
+
+    25% {
+        background-color: #962e99;
+    }
+
+    75% {
+        background-color: #381d55;
+    }
+
+    100% {
+        background-color: rebeccapurple;
+    }
+}
+@keyframes item {
+    0% {
+        color: rebeccapurple;
+        border: solid rebeccapurple;
+    }
+
+    25% {
+        color: #962e99;
+        border: solid #962e99;
+    }
+
+    75% {
+        color: #381d55;
+        border: solid #381d55;
+    }
+
+    100% {
+        color: rebeccapurple;
+        border: solid rebeccapurple;
+    }
+}
+.disabled{
+background-color: rgba(100,100,100,0.5);
+}
