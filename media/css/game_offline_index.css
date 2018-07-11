@@ -114,3 +114,25 @@ footer{
 .disabled{
 background-color: rgba(100,100,100,0.5);
 }
+
+.noGame{
+    display: none;
+}
+
+@media screen and (max-width:1000px) {
+    .normal{
+        display: none;
+    }
+    .noGame{
+        display: block;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    .normal{
+        display: none;
+    }
+    .noGame{
+        display: block;
+    }
+}

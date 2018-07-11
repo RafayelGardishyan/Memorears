@@ -16,7 +16,6 @@ div#memory_board{
 	margin:0px auto;
 }
 div#memory_board > div{
-	background: url('{{ cover }}') no-repeat;
 	background-size: 116px 116px;
 	border:rebeccapurple 3px solid;
 	border-radius: 15px;

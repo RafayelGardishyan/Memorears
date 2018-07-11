@@ -76,12 +76,12 @@ let ajaxinterval = setInterval(function() {
                 let turn = response.turn;
                 if (turn.toString() === player){
                     let element = document.getElementById('myturn');
-                    element.innerHTML = "My Turn";
+                    element.innerHTML = "Mijn Beurt";
                     element.style.backgroundColor = "rebeccapurple";
                     element.style.color = "#ffffff";
                 }else{
                     let element = document.getElementById('myturn');
-                    element.innerHTML = "Please wait...";
+                    element.innerHTML = "Even wachten...";
                     element.style.backgroundColor = "#444444";
                     element.style.color = "black"
                 }
