@@ -36,8 +36,8 @@
   font-size: 120px;
 }
 .buttonhok{
-  padding-left: 2.1%;
-  padding-right: 2.1%;
+  /*padding-left: 2.1%;*/
+  /*padding-right: 2.1%;*/
 }
 .buttonrow{
   padding: 10%;
@@ -45,6 +45,7 @@
 #buttons{
   margin-top: 20%;
   margin-bottom: 65%;
+  width: 100%;
 }
 
 button{
@@ -59,6 +60,7 @@ button{
     /* margin: 4px 2px; */
     cursor: pointer;
     border-radius: 25px;
+    margin-bottom: 15px;
 }
 #myturn, #myscore{
 font-size: 80px;
@@ -68,4 +70,14 @@ border-radius: 30px;
 padding: 20px;
 background-color: #444444;
 color: #000;
+}
+
+.noGame{
+    display: none;
+}
+@media screen and (orientation: landscape){
+    .normal{
+        display: none;
+    }
+    .noGame{display: block;}
 }

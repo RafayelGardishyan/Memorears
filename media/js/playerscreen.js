@@ -29,7 +29,7 @@ for (i = 0; i < 4; i++){
   document.getElementById('buttons').innerHTML += '<tr class="buttonrow" id="row_' + i + '"></tr>'
   for(j = 0; j < 6; j++){
     id = i * 6 + j;
-    document.getElementById('row_' + i).innerHTML += '<th class="buttonhok"><button onclick="send(' + id + ')" id="' + id + '" class="clickablebutton"> O </button></th>'
+    document.getElementById('row_' + i).innerHTML += '<th class="buttonhok"><button onclick="send(' + id + ')" id="' + id + '" class="clickablebutton">&nbsp;&nbsp;&nbsp;</button></th>'
   }
 }
 
