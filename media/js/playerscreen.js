@@ -54,12 +54,12 @@ function send(id) {
 function colorinterval() {
   opencards.forEach(function(item) {
     document.getElementById(item).style.backgroundColor = "#fff";
-    document.getElementById(item).style.color = "#555"
+    document.getElementById(item).style.color = "rebeccapurple"
   })
 }
 function colorintervalBack() {
   opencards.forEach(function(item) {
-    document.getElementById(item).style.backgroundColor = "#555";
+    document.getElementById(item).style.backgroundColor = "rebeccapurple";
     document.getElementById(item).style.color = "#fff"
   })
 }
