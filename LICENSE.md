@@ -1,4 +1,4 @@
-## Creative commons | Appelboom@GroningerForum 2018
+## Creative commons | Rafayel Gardishyan (Memorears forked at Memoreyes)2018
 
 # Attribution-NonCommercial-NoDerivatives 4.0 International
 
