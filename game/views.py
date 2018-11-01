@@ -48,7 +48,7 @@ def index(request):
 
 def setopencard(request, cardid, player):
     g = Game.objects.get(joinid=int(request.session['game_id']))
-    if player == g.turn:    
+    if player == g.turn:
         if g.opencard1 == 25 or g.opencard1 == None:
             g.opencard1 = cardid
         elif g.opencard1 <= 25:

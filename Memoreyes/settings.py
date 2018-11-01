@@ -25,7 +25,7 @@ SECRET_KEY = 'wgdr8=tfm5qtrzn=di*jw%celed7y7svv%@5@t(n_b@40*w5=f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [u'duits.pythonanywhere.com']
 
 
 # Application definition
@@ -124,7 +124,5 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
-]
+STATIC_ROOT = u'/home/duits/Memoreyes/static'
+STATIC_URL = '/static/'

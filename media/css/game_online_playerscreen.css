@@ -75,12 +75,12 @@ color: #000;
 .noGame{
     display: none;
 }
-@media screen and (orientation: landscape){
-    .normal{
-        display: none;
-    }
-    .noGame{display: block;}
-}
-    footer{
-        font-size: 60px;
-    }
+/*@media screen and (orientation: landscape){*/
+/*    .normal{*/
+/*        display: none;*/
+/*    }*/
+/*    .noGame{display: block;}*/
+/*}*/
+/*    footer{*/
+/*        font-size: 60px;*/
+/*    }*/

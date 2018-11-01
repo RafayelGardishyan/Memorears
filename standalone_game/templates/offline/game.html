@@ -5,6 +5,12 @@
 <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="media/images/favicon.ico">
 <link rel="stylesheet" href="/media/css/game_offline.css">
+<style>
+    div#memory_board > div{
+	background: url('{{ cover }}') no-repeat;
+    background-size: 116px 116px;
+    }
+</style>
 <script>
 var memory_array = ["{{ image1 }}", "{{ image1 }}",
                     "{{ image2 }}", "{{ image2 }}",
@@ -24,7 +30,7 @@ var memory_array = ["{{ image1 }}", "{{ image1 }}",
 </head>
 <body>
 <div class="content">
-<h1 id="title">Memoreyes</h1>
+<h1 id="title">Memorears</h1>
 <!-- <h6><a href="/offline-beta">Choose a new theme</a></h6> -->
 <!-- <h2><a href="/offline-beta">Choose a new theme</a></h2> -->
 <div id="memory_board"></div>
@@ -36,21 +42,21 @@ var memory_array = ["{{ image1 }}", "{{ image1 }}",
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>Je hebt gewonnen!</h2>
+      <h2>Du hast gewonnen!</h2>
     </div>
     <div class="modal-body">
-      <p>Alle vierkantjes zijn geopend <br>Om weer te spelen sluit deze dialoogvenster of klit buiten deze dialoogvenster</p>
+      <p>Alle Karten sind geöffnet <br>Um erneut zu spielen, schließt dieses Dialogfeld oder tippt außerhalb dieses Dialogfelds</p>
       <p>of</p>
-      <a href="/">Kies een nieuwe thema</a>
+      <a href="/">Wählen Sie ein neues Thema</a>
     </div>
     <div class="modal-footer">
-      <h3>© Appelboom Inc.</h3>
+      <h3>© Rafayel Gardishyan.</h3>
     </div>
   </div>
 
 </div>
 <script src="/media/js/game_offline_2.js"></script>
 </div>
-<footer class="content">© Appelboom Inc.</footer>
+<footer class="content">© Rafayel Gardishyan.</footer>
 </body>
 </html>

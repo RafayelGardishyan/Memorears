@@ -80,7 +80,7 @@ function memoryFlipTile(tileid, val){
             	    memory_tile_ids = [];
 //                    reset();
 				}
-				setTimeout(flip2Back, 1000);
+				setTimeout(flip2Back, 3500);
 			}
 			reset();
 		}

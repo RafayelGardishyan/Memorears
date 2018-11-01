@@ -7,6 +7,6 @@ class ThemeChoiceField(forms.ModelChoiceField):
 
 class ThemeForm(forms.Form):
     theme = ThemeChoiceField(Theme.objects.all().exclude(name='Covers').exclude(name='SiteAssets'), label='', required=True)
-    CHOICES = [('1', '1 Speler'),
-               ('2', '2 Spelers')]
+    CHOICES = [('1', '1 Spieler'),
+               ('2', '2 Spieler')]
     mode = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect(), label='')

@@ -6,6 +6,6 @@ class ThemeChoiceField(forms.ModelChoiceField):
          return obj.name
 
 class GameForm(forms.Form):
-    CHOICES = [('1 Player', '1 Player'), ('2 Player', '2 Player')]
+    CHOICES = [('1 Spieler', '1 Spieler'), ('2 Spieler', '2 Spieler')]
     player_mode = forms.ChoiceField(label='Mode', widget=forms.RadioSelect, choices=CHOICES, required=True)
     theme = ThemeChoiceField(Theme.objects.all(), label='Theme', required=True)
