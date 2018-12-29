@@ -19,20 +19,7 @@ let ajaxinterval = setInterval(function() {
         if (this.readyState === 4 && this.status === 200) {
             let response = JSON.parse(this.responseText);
             turn = response.turn;
-            if (turn === 1){
-                let element = document.getElementById('p1');
-                element.style.backgroundColor = "rebeccapurple";
-                element.style.color = "#ffffff";
-                let element2 = document.getElementById('p2');
-                element2.style.backgroundColor = "rgba(0,0,0,0)";
-                element2.style.color = "rebeccapurple"
-            }else if (turn === 2){
-                let element = document.getElementById('p2');
-                element.style.backgroundColor = "rebeccapurple";
-                element.style.color = "#ffffff";
-                let element2 = document.getElementById('p1');
-                element2.style.backgroundColor = "rgba(0,0,0,0)";
-                element2.style.color = "rebeccapurple";
+            document.getElementById('player').innerHTML = turn;
             }
 
 
@@ -46,9 +33,9 @@ let ajaxinterval = setInterval(function() {
   };
   xhttp.open("GET", "/getgame", true);
   xhttp.send();
-}, 1000);
-
-
+},
+1000;
+)
 function reset() {
   let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {

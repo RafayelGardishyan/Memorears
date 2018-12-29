@@ -1,14 +1,14 @@
 let player = 0;
-opencards = []
+opencards = [];
 function checkpin(inputfield) {
   if (inputfield.value.length === 5){
-    var xhttp = new XMLHttpRequest();
+      let xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
           if (this.readyState === 4 && this.status === 200) {
             document.getElementById("beforegame").classList.add('hidden');
             document.getElementById("game").classList.remove('hidden');
-      }
-    };
+          }
+      };
     xhttp.open("GET", "/getgame/"+inputfield.value, true);
     xhttp.send();
     }
@@ -26,7 +26,7 @@ function checkpin(inputfield) {
     }
 
 for (i = 0; i < 4; i++){
-  document.getElementById('buttons').innerHTML += '<tr class="buttonrow" id="row_' + i + '"></tr>'
+    document.getElementById('buttons').innerHTML += '<tr class="buttonrow" id="row_' + i + '"></tr>';
   for(j = 0; j < 6; j++){
     id = i * 6 + j;
     document.getElementById('row_' + i).innerHTML += '<th class="buttonhok"><button onclick="send(' + id + ')" id="' + id + '" class="clickablebutton">&nbsp;&nbsp;&nbsp;</button></th>'
@@ -46,7 +46,7 @@ function send(id) {
         opencards = [];
         }, 1000)
     }
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.open("GET", "/set/opencard/"+id+"/"+player, true);
     xhttp.send();
     }
@@ -68,11 +68,7 @@ let ajaxinterval = setInterval(function() {
         xhttp.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 let response = JSON.parse(this.responseText);
-                if (player === "1"){
-                   document.getElementById('score').innerHTML = response.player1_score;
-                }else{
-                    document.getElementById('score').innerHTML = response.player2_score;
-                }
+                document.getElementById('score').innerHTML = JSON.parse(response.player_score)[player - 1];
                 let turn = response.turn;
                 if (turn.toString() === player){
                     let element = document.getElementById('myturn');

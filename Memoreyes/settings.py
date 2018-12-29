@@ -25,7 +25,7 @@ SECRET_KEY = 'wgdr8=tfm5qtrzn=di*jw%celed7y7svv%@5@t(n_b@40*w5=f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'duits.pythonanywhere.com']
+ALLOWED_HOSTS = [u'*']
 
 
 # Application definition
