@@ -1,20 +1,20 @@
-var memory_values = [];
-var memory_tile_ids = [];
-var tiles_flipped = 0;
+let memory_values = [];
+let memory_tile_ids = [];
+let tiles_flipped = 0;
 Array.prototype.memory_tile_shuffle = function(){
-    var i = this.length, j, temp;
+    let i = this.length, j, temp;
     while(--i > 0){
         j = Math.floor(Math.random() * (i+1));
         temp = this[j];
         this[j] = this[i];
         this[i] = temp;
     }
-}
+};
 function newBoard(){
 	tiles_flipped = 0;
-	var output = '';
+    let output = '';
     memory_array.memory_tile_shuffle();
-	for(var i = 0; i < memory_array.length; i++){
+    for (let i = 0; i < memory_array.length; i++) {
 		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
 	}
 	document.getElementById('memory_board').innerHTML = output;
@@ -43,8 +43,8 @@ function memoryFlipTile(tile,val){
 			} else {
 				function flip2Back(){
 				    // Flip the 2 tiles back over
-				    var tile_1 = document.getElementById(memory_tile_ids[0]);
-				    var tile_2 = document.getElementById(memory_tile_ids[1]);
+                    let tile_1 = document.getElementById(memory_tile_ids[0]);
+                    let tile_2 = document.getElementById(memory_tile_ids[1]);
 				    tile_1.style.backgroundSize = '116px 116px;';
             	    tile_1.innerHTML = "";
 				    tile_2.style.backgroundSize = '116px 116px;';

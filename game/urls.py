@@ -13,5 +13,6 @@ urlpatterns = [
     path('player', views.playerscreen),
     path('create', views.create),
     path('lobby', views.lobby),
-    path('online', views.index)
+    path('online', views.index),
+    path('lock', views.lockroom)
 ]

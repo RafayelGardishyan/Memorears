@@ -16,7 +16,7 @@ function checkpin(inputfield) {
       xhttp.onreadystatechange = function() {
           if (this.readyState === 4 && this.status === 200) {
               if (JSON.parse(this.responseText)[0] === false){
-                  window.location.reload();
+                  window.location.href = "/player?l=true";
               }
               player = this.responseText[1];
       }
@@ -54,12 +54,12 @@ function send(id) {
 function colorinterval() {
   opencards.forEach(function(item) {
     document.getElementById(item).style.backgroundColor = "#fff";
-    document.getElementById(item).style.color = "rebeccapurple"
+      document.getElementById(item).style.color = "#3b094e"
   })
 }
 function colorintervalBack() {
   opencards.forEach(function(item) {
-    document.getElementById(item).style.backgroundColor = "rebeccapurple";
+      document.getElementById(item).style.backgroundColor = "#3b094e";
     document.getElementById(item).style.color = "#fff"
   })
 }
@@ -72,12 +72,12 @@ let ajaxinterval = setInterval(function() {
                 let turn = response.turn;
                 if (turn.toString() === player){
                     let element = document.getElementById('myturn');
-                    element.innerHTML = "Ich bin an der Reihe";
+                    element.innerHTML = "Mijn beurt";
                     element.style.backgroundColor = "rebeccapurple";
                     element.style.color = "#ffffff";
                 }else{
                     let element = document.getElementById('myturn');
-                    element.innerHTML = "Warten Sie ...";
+                    element.innerHTML = "Even wachten ...";
                     element.style.backgroundColor = "#444444";
                     element.style.color = "black"
                 }
@@ -86,3 +86,11 @@ let ajaxinterval = setInterval(function() {
       xhttp.open("GET", "/getgame", true);
       xhttp.send();
 }, 1000);
+
+function getUrlVars() {
+    let vars = {};
+    let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
+}

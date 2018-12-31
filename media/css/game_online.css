@@ -194,14 +194,9 @@ footer{
     }
 }
 
-#p1{
+  #player {
 background-color: rebeccapurple;
 color: #ffffff;
-border-radius: 20px;
-padding: 10px;
-}
-#p2{
-color: rebeccapurple;
 border-radius: 20px;
 padding: 10px;
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memoreyes</title>
+  <title>Memorears</title>
   <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="media/images/favicon.ico">
   <link rel="stylesheet" href="/media/css/game_offline_index.css">
@@ -14,7 +14,7 @@
     <div class="normal">
     <form action="/game" method="post">
         <div class="content">
-        <h3 class="rebecca">Wählen Sie das Thema und die Anzahl der Spielers</h3>
+        <h3 class="rebecca">Kies de thema en modus</h3>
         {{ errors }}
         {% csrf_token %}
         {{ form }}
@@ -26,7 +26,7 @@
     </form>
     </div>
     <div class="rebecca noGame">
-    Ihr Bildschirm ist nicht für "Memoreyes" geeignet. Versuchen Sie es verumzudrehenoder öffnen Sie Memoreyes auf einem größeren Bildschirm
+    Uw scherm is te klein voor het spel. Draai het om om gebruik een groter scherm
     </div>
 </div>
 <footer class="content">© Rafayel Gardishyan</footer>

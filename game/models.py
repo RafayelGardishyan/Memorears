@@ -16,3 +16,4 @@ class Game(models.Model):
     player_scores = models.CharField(max_length=255, default="[0]")
     turn = models.IntegerField(default=1)
     joinid = models.IntegerField(default=generate_game_id)
+    locked = models.BooleanField(default=False)

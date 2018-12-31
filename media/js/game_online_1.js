@@ -23,7 +23,7 @@ Array.prototype.memory_tile_shuffle = function(){
         this[j] = this[i];
         this[i] = temp;
     }
-}
+};
 function newBoard(){
 	tiles_flipped = 0;
 	let output = '';
@@ -80,7 +80,8 @@ function memoryFlipTile(tileid, val){
             	    memory_tile_ids = [];
 //                    reset();
 				}
-				setTimeout(flip2Back, 3500);
+
+                setTimeout(flip2Back, 2500);
 			}
 			reset();
 		}

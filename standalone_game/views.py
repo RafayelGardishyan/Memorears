@@ -19,7 +19,9 @@ def game(request):
                 images.append(i.image.url)
             cover = Image.objects.filter(theme=Theme.objects.get(name='Covers').id)
             for j in cover:
-                if j.image.name == 'images/{}.PNG'.format(Theme.objects.get(pk=theme).name):
+                if j.image.name == 'images/{}.png'.format(
+                        Theme.objects.get(pk=theme).name) or j.image.name == 'images/{}.PNG'.format(
+                        Theme.objects.get(pk=theme).name):
                     cover = j.image.url
                     break
             return render(request, 'offline/game.html', {

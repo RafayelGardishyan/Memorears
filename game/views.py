@@ -123,8 +123,19 @@ def playerscreen(request):
 
 def setonline(request, id):
     g = Game.objects.get(joinid=id)
+    if g.locked:
+        return JsonResponse([False], safe=False)
     g.player_count += 1
     g.player_scores = json.dumps([0] * g.player_count)
     print(g.player_scores)
     g.save()
     return JsonResponse([g.player_count], safe=False)
+
+
+def lockroom(request):
+    g = Game.objects.get(joinid=int(request.session['game_id']))
+    if g.player_count == 0:
+        return redirect("/lobby")
+    g.locked = True
+    g.save()
+    return redirect("/online")

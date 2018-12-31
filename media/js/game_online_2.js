@@ -20,8 +20,6 @@ let ajaxinterval = setInterval(function() {
             let response = JSON.parse(this.responseText);
             turn = response.turn;
             document.getElementById('player').innerHTML = turn;
-            }
-
 
             if (response.opencard1 !== null || response.opencard1 !== 25){
                 memoryFlipTile(response.opencard1, memory_array[response.opencard1]);
@@ -34,8 +32,8 @@ let ajaxinterval = setInterval(function() {
   xhttp.open("GET", "/getgame", true);
   xhttp.send();
 },
-1000;
-)
+    1000
+);
 function reset() {
   let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
