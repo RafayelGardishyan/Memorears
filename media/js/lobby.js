@@ -21,5 +21,4 @@ window.setTimeout(function(){
     // xhttp.open("GET", "/lock", true);
     // xhttp.send();
     // window.location.href = "/online";
-    window.location.href = "/lock";
 }, 30000);

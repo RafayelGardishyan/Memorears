@@ -18,7 +18,7 @@ div#memory_board{
 div#memory_board > div{
 	background: url('{{ cover }}') no-repeat;
 	background-size: 116px 116px;
-	border:rebeccapurple 3px solid;
+	border:#dd3f5b 3px solid;
 	border-radius: 15px;
 	width:113px;
 	height:113px;
@@ -79,7 +79,7 @@ transition: 2s;
 }
 
 a:link, a:visited {
-    background-color: rebeccapurple;
+    background-color: #dd3f5b;
     color: white;
     border-radius: 15px;
     padding: 25px 40px;
@@ -91,7 +91,7 @@ a:link, a:visited {
 
 
 a:hover, a:active {
-    background-color: #522d7f;
+    background-color: #dd3f5b;
 }
 
 /* Add Animation */
@@ -122,7 +122,7 @@ a:hover, a:active {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: rebeccapurple;
+    background-color: #dd3f5b;
     color: white;
 }
 
@@ -130,7 +130,7 @@ a:hover, a:active {
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: rebeccapurple;
+    background-color: #dd3f5b;
     color: white;
 }
   .content{
@@ -156,41 +156,51 @@ footer{
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }
+
 @keyframes bgcolor {
     0% {
-        background-color: rebeccapurple;
+        background-color: #db7880;
     }
 
     25% {
-        background-color: #962e99;
+        background-color: #dd3f5b;
+    }
+
+    50% {
+        background-color: #920d23;
     }
 
     75% {
-        background-color: #381d55;
+        background-color: #dd3f5b;
     }
 
     100% {
-        background-color: rebeccapurple;
+        background-color: #db7880;
     }
 }
 @keyframes item {
     0% {
-        color: rebeccapurple;
-        border: solid rebeccapurple;
+        color: #db7880;
+        border: solid #db7880;
     }
 
     25% {
-        color: #962e99;
-        border: solid #962e99;
+        color: #dd3f5b;
+        border: solid #dd3f5b;
+    }
+
+    50% {
+        color: #920d23;
+        border: solid #920d23;
     }
 
     75% {
-        color: #381d55;
-        border: solid #381d55;
+        color: #dd3f5b;
+        border: solid #dd3f5b;
     }
 
     100% {
-        color: rebeccapurple;
-        border: solid rebeccapurple;
+        color: #db7880;
+        border: solid #db7880;
     }
 }

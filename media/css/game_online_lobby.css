@@ -9,8 +9,9 @@
   margin: 30px;
   }
   body{
-  background-color: rebeccapurple;
+  background-color: #dd3f5b;
   }
+
   progress[value] {
   /* Reset the default appearance */
   -webkit-appearance: none;

@@ -1,0 +1,38 @@
+{% block firebase %}
+
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  let config = {
+    apiKey: "AIzaSyAX-aAn_uGrWaXq4CFBPO5IaZG4dJ-ZaK8",
+    authDomain: "memorearsproject.firebaseapp.com",
+    databaseURL: "https://memorearsproject.firebaseio.com",
+    projectId: "memorearsproject",
+    storageBucket: "memorearsproject.appspot.com",
+    messagingSenderId: "161185082363"
+  };
+  firebase.initializeApp(config);
+
+  function writeGameData(gameId, data) {
+    firebase.database().ref('games/' + gameId).set(data);
+  }
+
+  function setCallbackOnRecieve(gameId, func) {
+    let ref = firebase.database().ref('games/' + gameId);
+    ref.on('value', function(snapshot) {
+        console.log(snapshot.val());
+        func(snapshot.val());
+    });
+  }
+
+  function getOnce(gameId){
+    firebase.database().ref('games/' + gameId).once('value')
+      .then((snapshot) => {
+          game = snapshot.val();
+          Mgame = game;
+      });
+  }
+
+</script>
+
+{% endblock %}

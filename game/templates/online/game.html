@@ -11,6 +11,8 @@ background: url('{{ cover }}') no-repeat;
 }
 </style>
 <script>
+let gameId = [{{ gameid }}];
+gameId = gameId[0];
 let memory_array = ["{{ image1 }}", "{{ image1 }}",
                     "{{ image2 }}", "{{ image2 }}",
                     "{{ image3 }}", "{{ image3 }}",
@@ -25,6 +27,7 @@ let memory_array = ["{{ image1 }}", "{{ image1 }}",
                     "{{ image12 }}", "{{ image12 }}",
 ];
 </script>
+{% include "common.html" %}
 <script src="/media/js/game_online_1.js"></script>
 </head>
 <body>

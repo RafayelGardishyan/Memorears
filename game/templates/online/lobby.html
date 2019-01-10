@@ -6,14 +6,29 @@
   <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="media/images/favicon.ico">
 <link rel="stylesheet" href="/media/css/game_online_lobby.css">
+{% include "common.html" %}
 </head>
 <body>
 <div class="content">
-<h1>Game Pin: {{ gameid }}</h1>
+<h1>Game Pin: <gameId id="gameId">{{ gameid }}</gameId></h1>
 <h3>Ga naar <i style="color:rebeccapurple;">URL/player</i> op je telefoon en voer de "Game Pin" in</h3>
 <h4>Het spel begint in <span id="timeleft">30</span> seconden</h4>
 <progress value="0" max="30" id="progressBar"></progress>
 </div>
 <script src="/media/js/lobby.js"></script>
+<script>
+    let gameId = document.getElementById("gameId").innerText;
+    let game = {
+        openCard1: 25,
+        openCard2: 25,
+        player_count: 0,
+        player_scores: [0],
+        turn: 1,
+        locked: false
+    };
+
+    writeGameData(gameId, game);
+
+</script>
 </body>
 </html>
